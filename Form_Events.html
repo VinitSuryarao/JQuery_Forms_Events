@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title> JQuery Test  </title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type = "text/javascript">
+
+		    // ready func call when document is ready to render
+         $(document).ready(function() 
+         {
+            // Focus
+            $('#clientName, #countryList').focus(function() {
+               $('#clientName, #countryList').css("background-color","Yellow")
+             });
+
+             // Blur
+            $('#clientName, #countryList').blur(function() {
+               $('#clientName, #countryList').css("background-color","")
+             });
+
+             // Select
+             $('#clientName').select(function() {
+               $('#clientName').css("background-color","Blue")
+             });
+            
+           // Change
+             $('#countryList').change(function() {
+               $('#countryList').css("background-color","Pink")
+             });
+            
+              // Submit
+             $('#frmClient').submit(function() {
+                var name = $('#clientName').val();
+                var country = $('#countryList').val();
+                alert("Name ="+name+" Country= "+country);
+             });
+
+         });
+
+     </script>
+<head>
+   <body>
+      <form id="frmClient">
+         <label> Client Name</label><input type="text" id="clientName" /><br><br>
+         <label>Country</label>
+          <select id="countryList">
+             <option value="India">India</option>
+             <option value="Pakistan">Pakistan</option>
+             <option value="Afganistan">Afganistan</option>
+             </select>
+            <br><br>
+            <input type="submit">
+      </form>
+   </body>
+</html>
